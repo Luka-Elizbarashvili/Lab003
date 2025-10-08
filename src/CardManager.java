@@ -16,11 +16,23 @@ public class CardManager {
             }
         }
     public Card deal(){
-            cards[1].dealCard=true;
-            return cards[2];
+        Random number = new Random();
 
+        int attempts = 0;
+        int maxAttempts = cards.length;
 
+        while (attempts < maxAttempts) {
+            int randomNumber1 = number.nextInt(cards.length);
 
+            if (!cards[randomNumber1].dealCard) {
+                cards[randomNumber1].dealCard = true;
+                return cards[randomNumber1];
+            }
+
+            attempts++;
+        }
+        return null;
     }
+
 
 }
