@@ -1,6 +1,8 @@
 public class Main {
     public static void main(String[] args) {
-            System.out.println("Hello WOrld3 ");
+        CardManager dealer= new CardManager();
+        Card c = dealer.deal();
+            System.out.println(c.getDetails());
 
     }
 }
